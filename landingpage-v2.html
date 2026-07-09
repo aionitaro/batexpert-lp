@@ -294,6 +294,22 @@
       color: rgba(255,255,255,.9);
     }
     .chip-ok { color: var(--green); }
+    /* Coverage map card */
+    .hero-map {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      background: rgba(255,255,255,.07);
+      border: 1px solid rgba(255,255,255,.14);
+      border-radius: 10px;
+      padding: 10px 16px;
+      margin-bottom: 18px;
+      max-width: 420px;
+    }
+    .hero-map-icon { width: 44px; height: 44px; flex-shrink: 0; }
+    .hero-map-icon svg { display: block; width: 100%; height: 100%; }
+    .hero-map-text { font-size: .85rem; line-height: 1.4; color: rgba(255,255,255,.85); }
+    .hero-map-text b { display: block; color: var(--white); font-size: .92rem; margin-bottom: 1px; }
     .google-badge {
       display: inline-flex;
       align-items: center;
@@ -701,6 +717,24 @@
            target="_blank" rel="noopener" data-track="hero-whatsapp">
           💬 Scrie pe WhatsApp
         </a>
+      </div>
+      <div class="hero-map">
+        <span class="hero-map-icon">
+          <svg viewBox="0 0 200 200" aria-hidden="true">
+            <circle cx="100" cy="100" r="92" fill="rgba(244,123,32,.08)" stroke="rgba(244,123,32,.4)" stroke-width="1.5" stroke-dasharray="3 4"/>
+            <circle cx="100" cy="100" r="60" fill="rgba(255,255,255,.05)" stroke="rgba(255,255,255,.35)" stroke-width="1.2" stroke-dasharray="2 3"/>
+            <g stroke="rgba(255,255,255,.28)" stroke-width="1.3">
+              <line x1="100" y1="8" x2="100" y2="192"/>
+              <line x1="8" y1="100" x2="192" y2="100"/>
+              <line x1="26" y1="26" x2="174" y2="174"/>
+              <line x1="174" y1="26" x2="26" y2="174"/>
+            </g>
+            <circle cx="100" cy="100" r="34" fill="rgba(244,123,32,.16)" stroke="#F47B20" stroke-width="1.6"/>
+            <path d="M100 74c-11 0-19 8-19 19 0 14 19 33 19 33s19-19 19-33c0-11-8-19-19-19z" fill="#F47B20"/>
+            <circle cx="100" cy="92" r="7" fill="#1A1A2E"/>
+          </svg>
+        </span>
+        <span class="hero-map-text"><b>Acoperim tot Bucureștiul + Ilfov</b>Vin la tine oriunde ești, azi</span>
       </div>
       <div class="hero-chips">
         <span class="chip"><span class="chip-ok">✓</span> Autorizat RAR</span>
