@@ -1079,6 +1079,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   document.querySelectorAll('a[href^="tel:"]').forEach(el => {
     el.addEventListener('click', function () {
       const label = this.dataset.track || 'unknown';
+      /* GTM dataLayer event */
+      window.dataLayer = window.dataLayer || [];
+      dataLayer.push({
+        'event': 'phone_click',
+        'click_id': label,
+        'click_url': this.getAttribute('href')
+      });
       /* Google Ads conversion */
       if (typeof gtag !== 'undefined') {
         gtag('event', 'conversion', {
@@ -1094,6 +1101,27 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       if (typeof gtag !== 'undefined') {
         gtag('event', 'generate_lead', {
           'event_category': 'phone',
+          'event_label': label
+        });
+      }
+    });
+  });
+
+  /* ── Click tracking pentru WhatsApp ── */
+  document.querySelectorAll('a[href*="wa.me"]').forEach(el => {
+    el.addEventListener('click', function () {
+      const label = this.dataset.track || 'unknown';
+      /* GTM dataLayer event */
+      window.dataLayer = window.dataLayer || [];
+      dataLayer.push({
+        'event': 'whatsapp_click',
+        'click_id': label,
+        'click_url': this.getAttribute('href')
+      });
+      /* GA4 event */
+      if (typeof gtag !== 'undefined') {
+        gtag('event', 'generate_lead', {
+          'event_category': 'whatsapp',
           'event_label': label
         });
       }
