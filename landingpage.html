@@ -158,14 +158,13 @@
       flex-wrap: wrap;
     }
     .logo {
-      font-size: 1.45rem;
-      font-weight: 800;
-      letter-spacing: -.3px;
-      line-height: 1;
+      display: flex;
+      align-items: center;
+      background: var(--white);
+      padding: 6px 10px;
+      border-radius: 6px;
     }
-    .logo .bat { font-weight: 800; }
-    .logo .expert { font-weight: 400; letter-spacing: 0; }
-    .logo .dot { color: var(--red); }
+    .logo img { display: block; height: 28px; width: auto; max-width: 190px; object-fit: contain; }
     .topbar-right {
       display: flex;
       align-items: center;
@@ -674,7 +673,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- ══ STICKY HEADER ══════════════════════════════════ -->
 <header class="topbar">
   <div class="container topbar-inner">
-    <div class="logo"><span class="bat">BAT</span><span class="expert">EXPERT</span><span class="dot">.</span></div>
+    <div class="logo"><img src="https://batexpert.ro/img/logo-1773148655.jpg" alt="BATexpert"></div>
     <div class="topbar-right">
       <span class="topbar-badge">⚡ Sună oricând · L–S 08:00–20:00</span>
       <a href="tel:+40727782782" class="topbar-phone" data-track="header-phone">
@@ -690,7 +689,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <div class="hero-inner">
       <div class="hero-tag">⚡ Intervenție rapidă · Service autorizat RAR</div>
       <h1>Mașina nu pornește?
-        <em>Baterie livrată și montată azi, la tine acasă.</em>
+        <em>Baterie livrată și montată azi, oriunde în București și Ilfov.</em>
       </h1>
       <p class="hero-sub">
         Suni, îți recomandăm bateria potrivită, venim la tine și montăm pe loc —

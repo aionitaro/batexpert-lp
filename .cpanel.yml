@@ -5,3 +5,4 @@ deployment:
     - /bin/mkdir -p $DEPLOYPATH
     - /bin/cp -f landingpage.html $DEPLOYPATH
     - /bin/cp -f landingpage-v2.html $DEPLOYPATH
+    - /bin/cp -f landingpage-v3.html $DEPLOYPATH

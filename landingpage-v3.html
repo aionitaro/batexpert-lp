@@ -116,15 +116,15 @@
     /* ── RESET ──────────────────────────────────────── */
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-    /* ── BRAND TOKENS v2 — BATExpert brand colors ─── */
+    /* ── BRAND TOKENS v3 — paleta reală batexpert.ro (roșu/negru/alb) ─── */
     :root {
-      --red:      #E30613;        /* roșu brand — accent, logo dot */
-      --orange:   #F47B20;        /* portocaliu CTA — buton principal */
-      --orange-d: #D96510;        /* hover portocaliu */
-      --navy:     #1A1A2E;        /* hero/footer dark — exact batexpert.ro */
+      --red:      #E30613;        /* roșu brand — accent principal, CTA, logo dot */
+      --orange:   #E30613;        /* alias → roșu (backward compat cu CSS existent) */
+      --orange-d: #B8050F;        /* hover roșu */
+      --navy:     #1A1A1A;        /* negru — nav/footer, exact batexpert.ro */
       --navy2:    #2d2d2d;        /* gradient secundar */
-      --amber:    #F47B20;        /* alias → portocaliu (backward compat cu CSS existent) */
-      --amber-d:  #D96510;        /* hover alias */
+      --amber:    #E30613;        /* alias → roșu (backward compat cu CSS existent) */
+      --amber-d:  #B8050F;        /* hover alias */
       --body-bg:  #FFFFFF;        /* fundal alb — ca batexpert.ro */
       --text:     #333333;        /* text principal — ca batexpert.ro */
       --gray:     #555555;        /* text secundar */
@@ -145,13 +145,14 @@
 
     /* ── STICKY HEADER ──────────────────────────────── */
     .topbar {
-      background: var(--navy);
-      color: var(--white);
+      background: var(--white);
+      color: var(--text);
       padding: 10px 0;
       position: sticky;
       top: 0;
       z-index: 100;
-      box-shadow: 0 2px 12px rgba(0,0,0,.35);
+      border-bottom: 1px solid var(--border);
+      box-shadow: 0 2px 10px rgba(0,0,0,.06);
     }
     .topbar-inner {
       display: flex;
@@ -160,14 +161,8 @@
       gap: 12px;
       flex-wrap: wrap;
     }
-    .logo {
-      display: flex;
-      align-items: center;
-      background: var(--white);
-      padding: 6px 10px;
-      border-radius: 6px;
-    }
-    .logo img { display: block; height: 28px; width: auto; max-width: 190px; object-fit: contain; }
+    .logo { display: flex; align-items: center; }
+    .logo img { display: block; height: 34px; width: auto; max-width: 200px; object-fit: contain; }
     .topbar-right {
       display: flex;
       align-items: center;
@@ -175,18 +170,18 @@
     }
     .topbar-badge {
       font-size: .72rem;
-      background: rgba(255,255,255,.1);
-      border: 1px solid rgba(255,255,255,.2);
+      background: var(--gray-l);
+      border: 1px solid var(--border);
       padding: 4px 10px;
       border-radius: 12px;
-      color: rgba(255,255,255,.8);
+      color: var(--gray);
     }
     .topbar-phone {
       display: inline-flex;
       align-items: center;
       gap: 8px;
       background: var(--amber);
-      color: var(--navy);
+      color: var(--white);
       padding: 9px 20px;
       border-radius: 8px;
       font-weight: 700;
@@ -209,7 +204,7 @@
       content: '';
       position: absolute;
       inset: 0;
-      background-image: radial-gradient(circle at 70% 50%, rgba(245,158,11,.08) 0%, transparent 60%);
+      background-image: radial-gradient(circle at 70% 50%, rgba(227,6,19,.08) 0%, transparent 60%);
       pointer-events: none;
     }
     .hero-inner { position: relative; z-index: 1; max-width: 680px; }
@@ -217,9 +212,9 @@
       display: inline-flex;
       align-items: center;
       gap: 6px;
-      background: rgba(245,158,11,.15);
-      border: 1px solid rgba(245,158,11,.35);
-      color: #fcd34d;
+      background: rgba(227,6,19,.15);
+      border: 1px solid rgba(227,6,19,.35);
+      color: #ffb3b8;
       padding: 5px 14px;
       border-radius: 20px;
       font-size: .78rem;
@@ -257,16 +252,16 @@
       align-items: center;
       gap: 10px;
       background: var(--amber);
-      color: var(--navy);
+      color: var(--white);
       padding: 18px 36px;
       border-radius: 8px;
       font-size: 1.1rem;
       font-weight: 700;
-      box-shadow: 0 4px 20px rgba(245,158,11,.45);
+      box-shadow: 0 4px 20px rgba(227,6,19,.45);
       transition: background .2s, transform .1s, box-shadow .2s;
       white-space: nowrap;
     }
-    .btn-call:hover  { background: var(--amber-d); color: var(--white); transform: translateY(-2px); box-shadow: 0 6px 26px rgba(245,158,11,.5); }
+    .btn-call:hover  { background: var(--amber-d); color: var(--white); transform: translateY(-2px); box-shadow: 0 6px 26px rgba(227,6,19,.5); }
     .btn-call:active { transform: translateY(0); }
     .btn-wa {
       display: inline-flex;
@@ -392,7 +387,7 @@
       left: 24px;
       width: 32px; height: 32px;
       background: var(--amber);
-      color: var(--navy);
+      color: var(--white);
       border-radius: 50%;
       display: flex;
       align-items: center;
@@ -447,7 +442,7 @@
       height: 100px;
       transition: box-shadow .2s, border-color .2s;
     }
-    .brand-logo-card:hover { border-color: var(--amber); box-shadow: 0 4px 16px rgba(245,158,11,.12); }
+    .brand-logo-card:hover { border-color: var(--amber); box-shadow: 0 4px 16px rgba(227,6,19,.12); }
     .brand-logo-card svg { display: block; }
     .brand-logo-card img { max-height: 80px; width: auto; max-width: 200px; object-fit: contain; display: block; }
     .brand-note { margin-top: 20px; font-size: .84rem; color: var(--gray); }
@@ -468,7 +463,7 @@
       text-align: center;
       transition: box-shadow .2s, border-color .2s, border-left .2s, padding-left .2s;
     }
-    .trust-card:hover { border-left: 3px solid var(--amber); box-shadow: 0 4px 20px rgba(245,158,11,.1); padding-left: 19px; }
+    .trust-card:hover { border-left: 3px solid var(--amber); box-shadow: 0 4px 20px rgba(227,6,19,.1); padding-left: 19px; }
     .trust-card-icon { font-size: 2.2rem; margin-bottom: 14px; }
     .trust-card h3 { font-size: .98rem; font-weight: 700; margin-bottom: 8px; color: var(--text); }
     .trust-card p  { font-size: .845rem; color: var(--gray); line-height: 1.65; }
@@ -506,8 +501,8 @@
     .testi-author { font-size: .8rem; color: var(--gray); font-weight: 600; }
     .testi-badge {
       display: inline-block;
-      background: rgba(245,158,11,.1);
-      border: 1px solid rgba(245,158,11,.3);
+      background: rgba(227,6,19,.1);
+      border: 1px solid rgba(227,6,19,.3);
       color: var(--amber-d);
       padding: 2px 10px;
       border-radius: 10px;
@@ -520,13 +515,13 @@
       padding: 64px 0;
       background: linear-gradient(135deg, var(--amber) 0%, var(--amber-d) 100%);
       text-align: center;
-      color: var(--navy);
+      color: var(--white);
     }
     .urgency-cta h2 {
       font-size: clamp(1.5rem, 3.5vw, 2.3rem);
       font-weight: 900;
       margin-bottom: 12px;
-      color: var(--navy);
+      color: var(--white);
     }
     .urgency-cta p {
       font-size: 1rem;
@@ -535,7 +530,7 @@
       max-width: 520px;
       margin-left: auto;
       margin-right: auto;
-      color: var(--navy);
+      color: var(--white);
     }
     .btn-white {
       display: inline-flex;
@@ -547,10 +542,10 @@
       border-radius: 8px;
       font-size: 1.1rem;
       font-weight: 700;
-      box-shadow: 0 4px 24px rgba(13,31,60,.3);
+      box-shadow: 0 4px 24px rgba(0,0,0,.3);
       transition: transform .1s, box-shadow .2s, background .2s;
     }
-    .btn-white:hover { background: var(--navy2); transform: translateY(-2px); box-shadow: 0 6px 28px rgba(13,31,60,.4); }
+    .btn-white:hover { background: var(--navy2); transform: translateY(-2px); box-shadow: 0 6px 28px rgba(0,0,0,.35); }
 
     /* ── FAQ ─────────────────────────────────────────── */
     .faq { padding: 64px 0; background: var(--white); }
@@ -653,7 +648,7 @@
       justify-content: center;
       gap: 10px;
       background: var(--amber);
-      color: var(--navy);
+      color: var(--white);
       padding: 15px 20px;
       border-radius: 8px;
       font-size: 1rem;
@@ -731,7 +726,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <div class="hero-map">
         <span class="hero-map-icon">
           <svg viewBox="0 0 200 200" aria-hidden="true">
-            <circle cx="100" cy="100" r="92" fill="rgba(244,123,32,.08)" stroke="rgba(244,123,32,.4)" stroke-width="1.5" stroke-dasharray="3 4"/>
+            <circle cx="100" cy="100" r="92" fill="rgba(227,6,19,.08)" stroke="rgba(227,6,19,.4)" stroke-width="1.5" stroke-dasharray="3 4"/>
             <circle cx="100" cy="100" r="60" fill="rgba(255,255,255,.05)" stroke="rgba(255,255,255,.35)" stroke-width="1.2" stroke-dasharray="2 3"/>
             <g stroke="rgba(255,255,255,.28)" stroke-width="1.3">
               <line x1="100" y1="8" x2="100" y2="192"/>
@@ -739,9 +734,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
               <line x1="26" y1="26" x2="174" y2="174"/>
               <line x1="174" y1="26" x2="26" y2="174"/>
             </g>
-            <circle cx="100" cy="100" r="34" fill="rgba(244,123,32,.16)" stroke="#F47B20" stroke-width="1.6"/>
-            <path d="M100 74c-11 0-19 8-19 19 0 14 19 33 19 33s19-19 19-33c0-11-8-19-19-19z" fill="#F47B20"/>
-            <circle cx="100" cy="92" r="7" fill="#1A1A2E"/>
+            <circle cx="100" cy="100" r="34" fill="rgba(227,6,19,.16)" stroke="#E30613" stroke-width="1.6"/>
+            <path d="M100 74c-11 0-19 8-19 19 0 14 19 33 19 33s19-19 19-33c0-11-8-19-19-19z" fill="#E30613"/>
+            <circle cx="100" cy="92" r="7" fill="#1A1A1A"/>
           </svg>
         </span>
         <span class="hero-map-text"><b>Acoperim tot Bucureștiul + Ilfov</b>Venim la tine oriunde ești, azi</span>
