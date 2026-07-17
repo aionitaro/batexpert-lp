@@ -3,6 +3,6 @@ deployment:
   tasks:
     - export DEPLOYPATH=/home2/batexpert/public_html/lp/
     - /bin/mkdir -p $DEPLOYPATH
-    - /bin/cp -f landingpage.html $DEPLOYPATH
-    - /bin/cp -f landingpage-v2.html $DEPLOYPATH
-    - /bin/cp -f landingpage-v3.html $DEPLOYPATH
+    - /bin/cp -f baterie-auto-la-domiciliu.html $DEPLOYPATH
+    - /bin/cp -f baterie-auto-la-domiciliu-v2.html $DEPLOYPATH
+    - /bin/cp -f baterie-auto-la-domiciliu-v3.html $DEPLOYPATH
