@@ -9,3 +9,4 @@ deployment:
     - /bin/cp -f baterie-auto-la-domiciliu.html $DEPLOYPATH
     - /bin/cp -f baterie-auto-la-domiciliu-v2.html $DEPLOYPATH
     - /bin/cp -f baterie-auto-la-domiciliu-v3.html $DEPLOYPATH
+    - /bin/cp -f baterie-auto-la-domiciliu-constanta.html $DEPLOYPATH
